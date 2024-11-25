@@ -1,10 +1,17 @@
-import "./App.css";
-import { SplashScreen } from "./Components/SplashScreen";
+import { useState } from 'react'
+import './App.css'
+import { SplashScreen } from './Components/SplashScreen/SplashScreen'
+import { Form } from './Components/Form/Form'
 
 function App() {
-  return (
-    <SplashScreen/>
-  );
+	const [animate, setAnimate] = useState(false)
+
+	return (
+		<>
+			<SplashScreen animate={animate} setAnimate={setAnimate} />
+			{animate && <Form animate={animate} />}
+		</>
+	)
 }
 
-export default App;
+export default App
