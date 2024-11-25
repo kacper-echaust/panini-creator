@@ -1,0 +1,15 @@
+.container{
+    opacity: 0;
+}
+.fadeIn {
+	animation: fadeIn 5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
