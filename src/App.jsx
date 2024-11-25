@@ -1,10 +1,11 @@
-import "./App.css";
-import { SplashScreen } from "./Components/SplashScreen";
+import { useState } from 'react'
+import './App.css'
+import { SplashScreen } from './Components/SplashScreen'
 
 function App() {
-  return (
-    <SplashScreen/>
-  );
+	const [animate, setAnimate] = useState(false)
+
+	return <SplashScreen animate={animate} setAnimate={setAnimate}/>
 }
 
-export default App;
+export default App

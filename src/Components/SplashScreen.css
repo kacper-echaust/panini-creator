@@ -13,12 +13,15 @@
 	width: 1000px;
 	height: 1000px;
 }
+/* left circle */
 .ellipse-1 {
 	transform: translateX(-130%);
 }
+/* right circle */
 .ellipse-2 {
 	transform: translateX(30%);
 }
+/* center circle */
 .ellipse-3 {
 	display: flex;
 	left: 50%;
@@ -26,20 +29,27 @@
 	transform: translate(-50%, -50%);
 	overflow: hidden;
 }
-.ellipse-3::after {
+.ellipse-3::after,
+.ellipse-3::before {
 	content: '';
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 100%;
+	width: 1000px;
 	height: 200px;
+}
+.ellipse-3::after {
 	border-top: 0.5px solid #000000;
+}
+.ellipse-3::before {
 	border-bottom: 0.5px solid #000000;
 }
+/* top circle */
 .ellipse-4 {
 	left: 50%;
 	transform: translate(-50%, -60%);
 }
+/* bottom circle */
 .ellipse-5 {
 	left: 50%;
 	transform: translate(-50%, 60%);
@@ -67,11 +77,137 @@
 	line-height: 59.8px;
 }
 .headerContainer button {
-	width: 77px;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	height: 44px;
 	text-transform: uppercase;
-	border: none;
+	border: 0.5px solid transparent;
 	background-color: transparent;
 	padding: 14px 20px;
 	cursor: pointer;
+	transition: border 0.4s;
+}
+
+.headerContainer button:hover {
+	border-color: #000000;
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes ellipse-1 {
+	from {
+		transform: translateX(-130%);
+	}
+	to {
+		transform: translateX(-200%);
+	}
+}
+@keyframes ellipse-2 {
+	from {
+		transform: translateX(30%);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+@keyframes ellipse-3 {
+	from {
+		width: 1000px;
+		height: 1000px;
+		overflow: visible;
+	}
+	to {
+		width: 3000px;
+		height: 3000px;
+	}
+}
+@keyframes ellipse-4 {
+	from {
+		transform: translate(-50%, -60%);
+	}
+	to {
+		transform: translate(-50%, -130%);
+	}
+}
+@keyframes ellipse-5 {
+	from {
+		transform: translate(-50%, 60%);
+	}
+	to {
+		transform: translate(-50%, 130%);
+	}
+}
+@keyframes ellipse-6 {
+	from {
+		transform: translate(-80%, -50%);
+	}
+
+	to {
+		transform: translate(-150%, -50%);
+	}
+}
+
+@keyframes ellipse-7 {
+	from {
+		transform: translate(-20%, -50%);
+	}
+
+	to {
+		transform: translate(50%, -50%);
+	}
+}
+@keyframes rightLine {
+	from {
+		right: 0;
+	}
+	to {
+		right: -1000px;
+	}
+}
+@keyframes leftLine {
+	from {
+		left: 0;
+	}
+	to {
+		left: -1000px;
+	}
+}
+
+.fadeOut {
+	animation: fadeOut 2s ease-in forwards;
+}
+.animation1 {
+	animation: ellipse-1 5s ease-in forwards;
+}
+.animation2 {
+	animation: ellipse-2 5s ease-in forwards;
+}
+.animation3 {
+	animation: ellipse-3 5s ease-in forwards;
+}
+.animation3::after {
+	animation: rightLine 5s ease-in forwards;
+}
+.animation3::before {
+	animation: leftLine 5s ease-in forwards;
+}
+.animation4 {
+	animation: ellipse-4 5s ease-in forwards;
+}
+.animation5 {
+	animation: ellipse-5 5s ease-in forwards;
+}
+.animation6 {
+	animation: ellipse-6 5s ease-in forwards;
+}
+.animation7 {
+	animation: ellipse-7 5s ease-in forwards;
+}
+.animation8 {
+	animation: fadeOut 4s ease-in forwards;
 }
