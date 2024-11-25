@@ -5,7 +5,6 @@ type Props = {
 }
 
 const Form = ({ animate }: Props) => {
-	console.log(animate)
 	return (
 		<div className={`container ${animate ? 'fadeIn' : ''}`}>
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ullam est, nobis maiores corporis

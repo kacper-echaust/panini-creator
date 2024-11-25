@@ -3,10 +3,10 @@ import './SplashScreen.css'
 
 type Props = {
 	animate: boolean
-    setAnimate: React.Dispatch<React.SetStateAction<boolean>>
+	setAnimate: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const SplashScreen = ({ animate,setAnimate }: Props) => {
+const SplashScreen = ({ animate, setAnimate }: Props) => {
 	const handleStartCreate = () => {
 		setAnimate(true)
 	}
