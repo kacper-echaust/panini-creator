@@ -14,7 +14,7 @@ const RightArrow = ({ onClick }: Props) => {
 			viewBox='0 0 12 22'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'>
-			<path id='Vector 4' d='M1 1L11 11L1 21' stroke='black' stroke-width='0.5' />
+			<path id='Vector 4' d='M1 1L11 11L1 21' stroke='black' strokeWidth='0.5' />
 		</svg>
 	)
 }
