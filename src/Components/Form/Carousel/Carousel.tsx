@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { LeftArrow } from '../../../assets/icons/leftArrow'
 import { RightArrow } from '../../../assets/icons/rightArrow'
+import css from './Carousel.module.css'
 
 type Props = {
 	data: string[]
@@ -21,7 +22,7 @@ const Carousel = ({ data }: Props) => {
 		})
 	}
 	return (
-		<div>
+		<div className={css.container}>
 			<LeftArrow onClick={prevValue} />
 			<input type='text' value={data[value]} disabled />
 			<RightArrow onClick={nextValue} />
