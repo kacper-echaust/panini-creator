@@ -1,0 +1,31 @@
+.customSelect {
+	position: relative;
+	width: 250px;
+}
+.select {
+	width: 100%;
+	appearance: none;
+	height: 30px;
+	border: 0.5px solid #000000;
+	text-align: center;
+	cursor: pointer;
+	z-index: 1;
+}
+.customSelect::after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	transform: rotate(-45deg);
+	right: 15px;
+	width: 10px;
+	height: 10px;
+	border-left: 0.5px solid black;
+	border-bottom: 0.5px solid black;
+	pointer-events: none;
+	transition: 0.2s;
+}
+
+.customSelect:focus-within::after   {
+	transform: rotate(135deg);
+	top: 10px;
+}
