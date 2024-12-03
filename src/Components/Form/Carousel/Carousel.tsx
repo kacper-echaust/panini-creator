@@ -25,7 +25,7 @@ const Carousel = ({ data }: Props) => {
 		<div className={css.container}>
 			<LeftArrow onClick={prevValue} />
 			<input type='text' value={data[value]} disabled />
-			<RightArrow onClick={nextValue} />
+			<RightArrow onClick={nextValue}/>
 		</div>
 	)
 }

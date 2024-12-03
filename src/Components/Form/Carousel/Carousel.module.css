@@ -1,5 +1,6 @@
 .container {
 	display: flex;
+	width: 250px;
 }
 .container input {
 	border: none;
@@ -7,4 +8,6 @@
 	background-color: transparent;
 	text-transform: uppercase;
 	padding: 0 30px;
+	width: 100%;
 }
+
