@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import css from './Select.module.css'
 
 type Props = {
@@ -7,20 +7,21 @@ type Props = {
 }
 
 const Select = ({ data, name }: Props) => {
+	const [value, setValue] = useState('')
+
+	const handleChange = event => {
+		event.target.blur()
+		setValue(event.target.value)
+	}
+
 	return (
 		<div className={css.customSelect}>
-			<select
-				name={name}
-				id={name}
-				className={css.select}
-				onChange={e => {
-					e.target.blur()
-				}}>
-				{data.map(item => {
+			<select value={value} name={name} className={css.select} onChange={handleChange}>
+				{data.map((item, index) => {
 					return (
-						<>
-							<option value={item}>{item}</option>
-						</>
+						<option key={index} value={item}>
+							{item}
+						</option>
 					)
 				})}
 			</select>

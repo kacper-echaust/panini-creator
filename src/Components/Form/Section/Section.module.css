@@ -1,0 +1,8 @@
+.section {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 50px;
+	padding: 20px 0;
+	border-top: 0.5px solid #000000;
+}
