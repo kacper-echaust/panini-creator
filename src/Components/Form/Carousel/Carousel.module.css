@@ -1,6 +1,7 @@
 .container {
 	display: flex;
 	width: 250px;
+	margin-bottom: 20px;
 }
 .container input {
 	border: none;
@@ -10,4 +11,3 @@
 	padding: 0 30px;
 	width: 100%;
 }
-
