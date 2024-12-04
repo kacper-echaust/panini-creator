@@ -5,9 +5,10 @@ import SubstractIcon from '../../../assets/icons/SubstractIcon.jpg'
 
 type Props = {
 	children: ReactNode
+	id: string
 }
 
-const Switch = ({ children }: Props) => {
+const Switch = ({ children, id }: Props) => {
 	const [isOn, setIsOn] = useState(true)
 	const [arrayComponents, setArrayComponents] = useState<ReactNode[]>([children])
 
@@ -48,8 +49,8 @@ const Switch = ({ children }: Props) => {
 	return (
 		<>
 			<div className={css.container}>
-				<input type='checkbox' id='switch' onClick={handleSwitch} className={css.input} />
-				<label htmlFor='switch' className={css.label}></label>
+				<input type='checkbox' id={id} onClick={handleSwitch} className={css.input} />
+				<label htmlFor={id} className={css.label}></label>
 				<img src={AddIcon} alt='add icon' className={css.addIcon} onClick={handleAdd} />
 			</div>
 			<div className={css.childrenContainer}>
