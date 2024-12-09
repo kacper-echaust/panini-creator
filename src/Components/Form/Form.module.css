@@ -4,7 +4,7 @@
 .container {
 	width: 630px;
 	border: 0.5px solid #000000;
-	padding: 120px 50px;
+	padding: 100px 50px;
 	margin-bottom: 20px;
 }
 .container h3 {
@@ -13,6 +13,11 @@
 	border-bottom: 0.5px solid #000000;
 	font-size: 26px;
 	text-transform: uppercase;
+	font-family: Instrument Serif;
+	font-weight: 400;
+	line-height: 33.8px;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
 }
 
 .vegetablesContainer {
@@ -33,6 +38,9 @@
 	justify-content: center;
 	cursor: pointer;
 	background-color: #fbfbfb;
+	font-size: 12px;
+	line-height: 15.74px;
+	color: black;
 }
 .vegetablesContainer input:checked + label {
 	background-color: white;
@@ -44,17 +52,6 @@
 	width: 120px;
 }
 
-.fadeIn {
-	animation: fadeIn 5s ease-in forwards;
-}
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
 .radiusCheckbox,
 .radiusCheckbox::before {
 	border-radius: 50%;
@@ -69,5 +66,34 @@
 	display: flex;
 	width: 120px;
 	justify-content: space-between;
-
+}
+.addToOrderContainer {
+	display: flex;
+	justify-content: space-between;
+	width: 150px;
+}
+.inputPaniniName {
+	width: 330px;
+	height: 36px;
+	position: relative;
+}
+.inputPaniniName input {
+	position: absolute;
+	right: 0;
+	width: 100%;
+	padding: 10px;
+}
+.inputPaniniName input::placeholder {
+	padding: 10px;
+}
+.fadeIn {
+	animation: fadeIn 5s ease-in forwards;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

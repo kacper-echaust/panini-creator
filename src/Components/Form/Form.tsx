@@ -45,10 +45,10 @@ const Form = ({ animate }: Props) => {
 					<div className={css.vegetablesContainer}>
 						{vegetableVariant.map((item, index) => {
 							return (
-								<>
-									<input type='checkbox' key={index} id={item} />
+								<div key={index}>
+									<input type='checkbox' id={item} />
 									<label htmlFor={item}> {item}</label>
-								</>
+								</div>
 							)
 						})}
 					</div>
@@ -63,9 +63,9 @@ const Form = ({ animate }: Props) => {
 				</Section>
 				<Section name='Spreads'>
 					<div>
-						{spreadVariant.map(spread => {
+						{spreadVariant.map((spread, index) => {
 							return (
-								<div className={css.spreadContainer}>
+								<div className={css.spreadContainer} key={index}>
 									<Checkbox name={spread} />
 								</div>
 							)
@@ -74,9 +74,9 @@ const Form = ({ animate }: Props) => {
 				</Section>
 				<Section name='Serving'>
 					<div className={css.servingContainer}>
-						{servingVariant.map(serving => {
+						{servingVariant.map((serving, index) => {
 							return (
-								<div className={css.servingContainer}>
+								<div className={css.servingContainer} key={index}>
 									<Checkbox name={serving} className={css.radiusCheckbox} />
 								</div>
 							)
@@ -85,9 +85,9 @@ const Form = ({ animate }: Props) => {
 				</Section>
 				<Section name='Topping'>
 					<div>
-						{toppingVariant.map(topping => {
+						{toppingVariant.map((topping, index) => {
 							return (
-								<div className={css.toppingContainer}>
+								<div className={css.toppingContainer} key={index}>
 									<Checkbox name={topping} />
 								</div>
 							)
@@ -97,6 +97,21 @@ const Form = ({ animate }: Props) => {
 			</div>
 			<div className={css.container}>
 				<h3>finalize order</h3>
+				<Section name='Name panini'>
+					<label htmlFor='paniniName' className={css.inputPaniniName}>
+						<input id='paniniName' type='text' placeholder='eg. Club Panini' />
+					</label>
+				</Section>
+				<Section name='Cutlery'>
+					<div className={css.addToOrderContainer}>
+						<Checkbox name='ADD TO ORDER' />
+					</div>
+				</Section>
+				<Section name='Napkins'>
+					<div className={css.addToOrderContainer}>
+						<Checkbox name='ADD TO ORDER' />
+					</div>
+				</Section>
 			</div>
 		</form>
 	)

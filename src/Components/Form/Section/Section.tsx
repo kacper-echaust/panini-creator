@@ -9,7 +9,7 @@ type Props = {
 const Section = ({name,children}:Props) => {
     return (
         <section className={css.section}>
-            <label>{name}</label>
+            <label className={css.title}>{name}</label>
             {children}
         </section>
     )
