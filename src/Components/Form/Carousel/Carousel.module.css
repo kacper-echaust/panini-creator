@@ -8,6 +8,11 @@
 	text-align: center;
 	background-color: transparent;
 	text-transform: uppercase;
-	padding: 0 30px;
-	width: 100%;
+	width: 100px;
+}
+.inputContainer {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { LeftArrow } from '../../../assets/icons/leftArrow'
 import { RightArrow } from '../../../assets/icons/rightArrow'
+import { GrainIcon } from '../../../assets/icons/Icon=Grain'
+import { WheatIcon } from '../../../assets/icons/Icon=Wheat'
 import css from './Carousel.module.css'
+import { breadVariants } from '../../../data/bread'
 
 type Props = {
 	data: string[]
@@ -21,11 +24,16 @@ const Carousel = ({ data }: Props) => {
 			return prevValue - 1
 		})
 	}
+	const breadIcon = value == 0 ? <GrainIcon /> : <WheatIcon/>
 	return (
 		<div className={css.container}>
 			<LeftArrow onClick={prevValue} />
-			<input type='text' value={data[value]} disabled />
-			<RightArrow onClick={nextValue}/>
+			<div className={css.inputContainer}>
+				{data === breadVariants && breadIcon}
+					
+				<input type='text' value={data[value]} disabled />
+			</div>
+			<RightArrow onClick={nextValue} />
 		</div>
 	)
 }
