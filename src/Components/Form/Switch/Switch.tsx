@@ -1,7 +1,5 @@
 import React, { ReactNode, useState } from 'react'
 import css from './Switch.module.css'
-import AddIcon from '../../../assets/icons/AddIcon.jpg'
-import SubstractIcon from '../../../assets/icons/SubstractIcon.jpg'
 
 type Props = {
 	children: ReactNode
@@ -16,20 +14,18 @@ const Switch = ({ children, id }: Props) => {
 		setIsOn(!isOn)
 	}
 	const handleAdd = () => {
+		if (!isOn) return
 		const id = String(Date.now())
-		console.log(id)
 		setArrayComponents(prevArray => {
 			return [
 				...prevArray,
 				<div id={id} key={id}>
-					<img
-						src={SubstractIcon}
-						alt='substract icon'
+					<div
 						className={css.substractIcon}
 						onClick={() => {
 							handleDelete(id)
 						}}
-					/>
+					></div>
 					{children}
 				</div>,
 			]
@@ -51,7 +47,7 @@ const Switch = ({ children, id }: Props) => {
 			<div className={css.container}>
 				<input type='checkbox' id={id} onClick={handleSwitch} className={css.input} />
 				<label htmlFor={id} className={css.label}></label>
-				<img src={AddIcon} alt='add icon' className={css.addIcon} onClick={handleAdd} />
+				<div className={css.addIcon} onClick={handleAdd}></div>
 			</div>
 			<div className={css.childrenContainer}>
 				{isOn &&
