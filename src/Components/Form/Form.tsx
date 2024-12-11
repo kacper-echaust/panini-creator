@@ -64,7 +64,7 @@ const Form = ({ animate }: Props) => {
 					</div>
 				</Section>
 			</div>
-			<div className={css.container}>
+			{/* <div className={css.container}>
 				<h3>configure extras</h3>
 				<Section name='Egg'>
 					<Switch id='egg'>
@@ -122,7 +122,7 @@ const Form = ({ animate }: Props) => {
 						<Checkbox name='ADD TO ORDER' />
 					</div>
 				</Section>
-			</div>
+			</div> */}
 		</form>
 	)
 }
