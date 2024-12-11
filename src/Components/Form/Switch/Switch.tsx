@@ -49,12 +49,11 @@ const Switch = ({ children, id }: Props) => {
 				<label htmlFor={id} className={css.label}></label>
 				<div className={css.addIcon} onClick={handleAdd}></div>
 			</div>
-			<div className={css.childrenContainer}>
+			
 				{isOn &&
 					arrayComponents.map(component => {
 						return component
 					})}
-			</div>
 		</>
 	)
 }

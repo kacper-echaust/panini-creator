@@ -1,11 +1,50 @@
 .form {
 	opacity: 0;
+	position: relative;
+	margin-top: 100px;
+}
+.header {
+	position: absolute;
+	font-size: 16px;
+	line-height: 46.8px;
+}
+.header h1 {
+	font-family: Instrument Serif;
+}
+.randomizePaniniButton,
+.header {
+	position: absolute;
+	top: -70px;
+}
+.randomizePaniniButton {
+	width: 200px;
+	right: 0;
+	transition: 0.4s;
+}
+.randomizePaniniButton button {
+	width: 100%;
+	padding: 14px 20px 14px 15px;
+	text-transform: uppercase;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+}
+.randomizePaniniButton img {
+	margin-right: 6px;
+	transition: 0.4s;
+}
+.randomizePaniniButton:hover {
+	border: 0.5px solid black;
+}
+.randomizePaniniButton:hover img {
+	transform: rotate(90deg);
 }
 .container {
 	width: 630px;
 	border: 0.5px solid #000000;
 	padding: 100px 50px;
 	margin-bottom: 20px;
+	background-color: #fff;
 }
 .container h3 {
 	padding-bottom: 50px;
@@ -19,7 +58,6 @@
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
 }
-
 .vegetablesContainer {
 	display: grid;
 	gap: 15px 5px;

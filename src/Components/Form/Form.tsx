@@ -14,6 +14,7 @@ import { Switch } from './Switch/Switch'
 import { Select } from './Select/Select'
 import { Section } from './Section/Section'
 import { Checkbox } from './Checkbox/Checkbox'
+import dices from '../../assets/icons/Dices.jpg'
 type Props = {
 	animate: boolean
 }
@@ -21,10 +22,19 @@ type Props = {
 const Form = ({ animate }: Props) => {
 	return (
 		<form className={`${css.form} ${animate ? css.fadeIn : ''}`}>
+			<div className={css.header}>
+				<h1>Panini Creator</h1>
+			</div>
+			<div className={css.randomizePaniniButton}>
+				<button>
+					<img src={dices} alt='dices' />
+					randomize panini
+				</button>
+			</div>
 			<div className={css.container}>
 				<h3>configure base</h3>
 				<Section name='Bread'>
-					<Carousel data={breadVariants} />
+						<Carousel data={breadVariants} />
 				</Section>
 				<Section name='Cheese'>
 					<Switch id='cheese'>

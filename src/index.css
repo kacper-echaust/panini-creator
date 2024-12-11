@@ -18,6 +18,7 @@ body {
 	min-height: 100vh;
 	overflow-x: hidden;
 	font-family: Oxygen Mono;
+	background-color: #FBFBFB;
 }
 * {
 	font-family: Oxygen Mono;
