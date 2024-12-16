@@ -1,18 +1,18 @@
-import css from './Section.module.css'
-import React, { ReactNode } from 'react'
+import css from './Section.module.css';
+import React, { ReactNode } from 'react';
 
 type Props = {
-    name: string
-    children:ReactNode
-}
+  name: string;
+  children: ReactNode;
+};
 
-const Section = ({name,children}:Props) => {
-    return (
-        <section className={css.section}>
-            <label className={css.title}>{name}</label>
-            {children}
-        </section>
-    )
-}
+const Section = ({ name, children }: Props) => {
+  return (
+    <section className={css.section}>
+      <label className={css.title}>{name}</label>
+      {children}
+    </section>
+  );
+};
 
-export {Section}
+export { Section };
