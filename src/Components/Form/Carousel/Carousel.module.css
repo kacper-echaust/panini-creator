@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  width: 250px;
+  margin-bottom: 20px;
+}
+.container input {
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  text-transform: uppercase;
+  width: 100px;
+}
+.inputContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

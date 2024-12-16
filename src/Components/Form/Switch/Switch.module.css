@@ -1,0 +1,91 @@
+.container {
+  position: absolute;
+  height: 100%;
+  left: 80px;
+  top: 23px;
+  display: flex;
+  width: 100px;
+}
+.input {
+  width: 0;
+  height: 0;
+}
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+  width: 27px;
+  height: 17px;
+  border: 0.5px solid black;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.label::before {
+  content: '';
+  position: absolute;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  margin: 2px;
+  transition: 0.4s;
+}
+.input:checked + .label::before {
+  background-color: #fff;
+  border: 0.5px solid black;
+  transform: translateX(-100%);
+}
+
+.addIcon {
+  margin-left: 10px;
+}
+.addIcon,
+.substractIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  border: 0.5px solid black;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.4s;
+}
+.addIcon::after,
+.addIcon::before,
+.substractIcon::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 0.5px;
+  background-color: black;
+}
+.addIcon::before {
+  transform: rotate(-90deg);
+}
+.substractIcon {
+  position: absolute;
+  left: -155px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.substractIcon::after {
+  content: '';
+  position: absolute;
+}
+.addIcon:hover,
+.substractIcon:hover {
+  background-color: black;
+}
+.addIcon:hover::before,
+.addIcon:hover::after,
+.substractIcon:hover::after {
+  background-color: white;
+}
+.addedComponent {
+  position: relative;
+  margin: 10px 0;
+}

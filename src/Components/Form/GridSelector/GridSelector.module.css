@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    gap: 15px 5px;
+    grid-template-columns: 100px 100px 100px;
+  }
+  .container input {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  .container label {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #fbfbfb;
+    font-size: 12px;
+    line-height: 15.74px;
+    color: black;
+  }
+  .container input:checked + label {
+    background-color: white;
+    border: 1px solid black;
+  }
