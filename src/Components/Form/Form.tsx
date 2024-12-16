@@ -97,7 +97,7 @@ const Form = ({ animate }: Props) => {
           </div>
         </Section>
       </div>
-      <div className={css.container}>
+      {/* <div className={css.container}>
         <h3>finalize order</h3>
         <Section name="Name panini">
           <label htmlFor="paniniName" className={css.inputPaniniName}>
@@ -118,7 +118,7 @@ const Form = ({ animate }: Props) => {
           <button className={css.placeOrderButton}>place order</button>
           <button className={css.startAgainButton}>start again</button>
         </div>
-      </div>
+      </div> */}
     </form>
   );
 };
