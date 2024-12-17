@@ -1,6 +1,6 @@
 import './App.css';
 import { SplashScreen } from './Components/SplashScreen/SplashScreen';
-import {  PaniniProvider } from './context/PaniniContext';
+import { PaniniProvider } from './context/PaniniContext';
 
 function App() {
   return (

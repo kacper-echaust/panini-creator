@@ -20,6 +20,7 @@ import { PaniniContext, SplashScreenValues } from '../../context/PaniniContext';
 
 const Form = () => {
   const { animate, setAnimate, setSplashScreenValues } = useContext(PaniniContext);
+
   const sendOrder = () => {
     setAnimate(false);
     setSplashScreenValues({
@@ -27,6 +28,7 @@ const Form = () => {
       buttonName: SplashScreenValues.StartAgain,
     });
   };
+
   return (
     <form className={`${css.form} ${animate ? css.fadeIn : ''}`}>
       <div className={css.header}>

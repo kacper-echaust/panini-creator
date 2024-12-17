@@ -3,9 +3,8 @@ import './SplashScreen.css';
 import { PaniniContext } from '../../context/PaniniContext';
 import { Form } from '../Form/Form';
 
-
 const SplashScreen = () => {
-  const { animate, setAnimate,splashScreenValues } = useContext(PaniniContext);
+  const { animate, setAnimate, splashScreenValues } = useContext(PaniniContext);
   const handleStartCreate = () => {
     setAnimate(true);
   };

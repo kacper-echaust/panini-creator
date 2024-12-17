@@ -36,7 +36,6 @@ const PaniniProvider = ({ children }: Props) => {
     headerName: SplashScreenValues.PaniniCreator,
     buttonName: SplashScreenValues.Begin,
   });
-console.log(splashScreenValues);
   return (
     <PaniniContext.Provider value={{ animate, setAnimate, splashScreenValues, setSplashScreenValues }}>
       {children}
