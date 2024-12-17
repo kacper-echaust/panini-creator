@@ -3,12 +3,13 @@ import css from './Switch.module.css';
 
 type Props = {
   children: ReactNode;
+  id: string;
 };
 type arrayComponentsType = {
   id: string;
   component: ReactNode;
 };
-const Switch = ({ children }: Props) => {
+const Switch = ({ children, id }: Props) => {
   const [isOn, setIsOn] = useState(true);
   const [arrayComponents, setArrayComponents] = useState<arrayComponentsType[]>([
     {
@@ -58,8 +59,8 @@ const Switch = ({ children }: Props) => {
   return (
     <>
       <div className={css.container}>
-        <input type="checkbox" id={arrayComponents[0].id} onClick={handleSwitch} className={css.input} />
-        <label htmlFor={arrayComponents[0].id} className={css.label}></label>
+        <input type="checkbox" id={id} onClick={handleSwitch} className={css.input} />
+        <label htmlFor={id} className={css.label}></label>
         <div className={css.addIcon} onClick={handleAdd}></div>
       </div>
       <div>
