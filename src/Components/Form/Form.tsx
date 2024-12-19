@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import css from './Form.module.css';
 import { Carousel } from './Carousel/Carousel';
 import { breadVariants } from '../../data/bread';
@@ -16,11 +16,19 @@ import { Section } from './Section/Section';
 import { Checkbox } from './Checkbox/Checkbox';
 import dices from '../../assets/icons/Dices.jpg';
 import { GridSelector } from './GridSelector/GridSelector';
-type Props = {
-  animate: boolean;
-};
+import { PaniniContext, SplashScreenValues } from '../../context/PaniniContext';
 
-const Form = ({ animate }: Props) => {
+const Form = () => {
+  const { animate, setAnimate, setSplashScreenValues } = useContext(PaniniContext);
+
+  const sendOrder = () => {
+    setAnimate(false);
+    setSplashScreenValues({
+      headerName: SplashScreenValues.PaniniOrdered,
+      buttonName: SplashScreenValues.StartAgain,
+    });
+  };
+
   return (
     <form className={`${css.form} ${animate ? css.fadeIn : ''}`}>
       <div className={css.header}>
@@ -115,7 +123,9 @@ const Form = ({ animate }: Props) => {
           </div>
         </Section>
         <div className={css.endButtonsContainer}>
-          <button className={css.placeOrderButton}>place order</button>
+          <button className={css.placeOrderButton} onClick={sendOrder}>
+            place order
+          </button>
           <button className={css.startAgainButton}>start again</button>
         </div>
       </div>

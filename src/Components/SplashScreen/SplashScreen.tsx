@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './SplashScreen.css';
+import { PaniniContext } from '../../context/PaniniContext';
+import { Form } from '../Form/Form';
 
-type Props = {
-  animate: boolean;
-  setAnimate: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-const SplashScreen = ({ animate, setAnimate }: Props) => {
+const SplashScreen = () => {
+  const { animate, setAnimate, splashScreenValues } = useContext(PaniniContext);
   const handleStartCreate = () => {
     setAnimate(true);
   };
@@ -22,9 +20,10 @@ const SplashScreen = ({ animate, setAnimate }: Props) => {
         <div className={`ellipse-7 big ${animate ? 'animation7' : ''}`}></div>
       </div>
       <div className={`headerContainer ${animate ? 'animation8' : ''}`}>
-        <p>Panini Creator</p>
-        <button onClick={handleStartCreate}>begin</button>
+        <p>{splashScreenValues.headerName}</p>
+        <button onClick={handleStartCreate}>{splashScreenValues.buttonName}</button>
       </div>
+      {animate && <Form />}
     </>
   );
 };
