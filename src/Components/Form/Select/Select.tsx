@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import css from './Select.module.css';
+import { useFormContext } from 'react-hook-form';
 
 type Props = {
   data: string[];
   name: string;
 };
 
-const Select = ({ data, name }: Props) => {
-  const [value, setValue] = useState(data[0]);
+const Select = forwardRef(({ data, name }: Props, ref) => {
   const [showOption, setShowOption] = useState(false);
-
+  const { watch, setValue } = useFormContext();
+  const value = watch(name);
   const handleShowOption = () => {
     setShowOption(!showOption);
   };
 
+  const handleSelect = (item: string) => {
+    setValue(name, item);
+    setShowOption(false);
+  };
   return (
     <div className={`${css.customSelect} ${showOption && css.customSelectFocus}`}>
       <div className={css.select} onClick={handleShowOption}>
@@ -25,7 +30,7 @@ const Select = ({ data, name }: Props) => {
                 key={index}
                 className={css.option}
                 onClick={() => {
-                  setValue(item);
+                  handleSelect(item);
                 }}
               >
                 <span>{item}</span>
@@ -36,6 +41,6 @@ const Select = ({ data, name }: Props) => {
       </div>
     </div>
   );
-};
+});
 
 export { Select };

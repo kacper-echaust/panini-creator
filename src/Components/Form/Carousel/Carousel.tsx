@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
+import React, { forwardRef } from 'react';
 import { LeftArrow } from '../../../assets/icons/leftArrow';
 import { RightArrow } from '../../../assets/icons/rightArrow';
 import { GrainIcon } from '../../../assets/icons/Icon=Grain';
 import { WheatIcon } from '../../../assets/icons/Icon=Wheat';
 import css from './Carousel.module.css';
 import { breadVariants } from '../../../data/bread';
+import { useFormContext } from 'react-hook-form';
 
 type Props = {
   data: string[];
+  name: string;
 };
 enum CarouselValues {
   'BACKWARDS',
   'FORWARDS',
 }
-const Carousel = ({ data }: Props) => {
-  const [dataIndex, setDataIndex] = useState(0);
+
+const Carousel = forwardRef(({ data, name }: Props, ref) => {
+  const { watch, setValue, register } = useFormContext();
+  const value = watch(name);
+  const isObject = value && typeof value === 'object';
+  const dataIndex = isObject ? data.findIndex((item) => item === value.name) : data.indexOf(value);
+
   const changeIndex = (direction: CarouselValues) => {
-    if (direction === CarouselValues.BACKWARDS) {
-      if (dataIndex === 0) return;
-      setDataIndex((prevDataIndex) => prevDataIndex - 1);
-    } else if (direction === CarouselValues.FORWARDS) {
-      if (dataIndex === data.length - 1) return;
-      setDataIndex((prevDataIndex) => prevDataIndex + 1);
+    if (direction === CarouselValues.BACKWARDS && dataIndex > 0) {
+      setValue(name, data[dataIndex - 1]);
+    } else if (direction === CarouselValues.FORWARDS && dataIndex < data.length - 1) {
+      setValue(name, data[dataIndex + 1]);
     }
   };
+
   const breadIcon = dataIndex == 0 ? <GrainIcon /> : <WheatIcon />;
+
   return (
     <div className={css.container}>
       <LeftArrow
@@ -35,7 +42,7 @@ const Carousel = ({ data }: Props) => {
       <div className={css.inputContainer}>
         {data === breadVariants && breadIcon}
 
-        <input type="text" value={data[dataIndex]} disabled />
+        <input disabled {...register(name)} />
       </div>
       <RightArrow
         onClick={() => {
@@ -44,6 +51,6 @@ const Carousel = ({ data }: Props) => {
       />
     </div>
   );
-};
+});
 
 export { Carousel };
